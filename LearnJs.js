@@ -283,26 +283,213 @@
 
 //  function inside function in js
 
-const nestedFun = () => {
-  const add = (a, b) => {
-    // arrow funnction
-    console.log(a + b);
-  };
-  function sub(a, b) {
-    // function declaration
-    console.log(a - b);
-  }
-  const div = function (a, b) {
-    // function expression
-    console.log(a / b);
-  };
+// const nestedFun = () => {
+//   const add = (a, b) => {
+//     // arrow funnction
+//     console.log(a + b);
+//   };
+//   function sub(a, b) {
+//     // function declaration
+//     console.log(a - b);
+//   }
+//   const div = function (a, b) {
+//     // function expression
+//     console.log(a / b);
+//   };
 
-  console.log("nested function demo");
-  add(2, 3);
-  sub(5, 6);
-  div(5, 2);
-};
+//   console.log("nested function demo");
+//   add(2, 3);
+//   sub(5, 6);
+//   div(5, 2);
+// };
 
-nestedFun();
+// nestedFun();
 
+// function scope and block scope
 
+// let and const are block scope
+// eg
+// {
+//   let a = 10;
+// }
+// console.log(a);
+// {
+//   const b = 20;
+// }
+// console.log(b);
+// this caught error
+// console.log(a);
+// ReferenceError: a is not defined
+
+// var is function scope
+// {
+//   var a = 10;
+// }
+// console.log(a);
+
+// {
+//   var a = 12;
+// }
+
+// console.log(a);
+
+// default params
+
+// function add(a,b=3){
+//   console.log(a+b);
+// }
+
+// add(3);
+
+// // rest parameters in js
+
+// function view(a,b,c,...rest){
+//   console.log(a);
+//   console.log(b);
+//   console.log(c);
+//   const [num1,num2,num3]=rest;
+
+//   console.log(num1);
+//   console.log(num2);
+//   console.log(num3);
+// }
+
+// view(1,2,3,4,5,6);
+
+// Day 4th of js
+
+// 1. call back function
+// function func2(){
+//   console.log("call back function ");
+// }
+// const func=(other)=>{
+//  other();
+// }
+// func(func2);
+
+//2. Important array method in js
+// forEach(callback);
+// Map
+
+//forEach();
+// let num=[10,20,34,54];
+// const func=(num,index)=>{
+//   console.log(`number is ${num} and index in ${index}`);
+// }
+// num.forEach(func);
+
+// const users = [
+//   { name: "ranjit", age: 21 },
+//   { name: "ran", age: 25 },
+//   { name: "jit", age: 23 },
+// ];
+
+// users.forEach(function (name) {
+//   console.log(name.name);
+// });
+
+// Map Function
+// it return new array
+
+// let number=[1,3,4,5,57];
+
+// function square(number){
+//    return number*number;
+// }
+
+// let res=number.map(square);
+
+// console.log(res);
+
+// filter method in js
+
+// const names = ["ranjit", "arjun", "rachit", "madhava"];
+
+// const IsStartWithR = (name) => {
+//   return name === "madhava";
+// };
+
+// const rname = names.filter(IsStartWithR);
+// console.log(rname);
+
+// const number = [1, "a", {}, 3, "g"];
+
+// let res = number.filter((element) => {
+//   return typeof element === "string";
+// });
+
+// console.log(res);
+
+// Reduce method in js
+// problem is to find the sum of all value from array
+// let number=[1,2,3,4,5];
+
+// let sumofaray=number.reduce((accumulator,currentVal)=>{
+//   return accumulator+currentVal;
+// })
+
+// console.log(sumofaray);
+
+// const cart=[
+//   {
+//     productId:1,
+//     productName: "iphone",
+//     Price:12000,
+//   },
+//   {
+//     productId:2,
+//     productName: "iphone",
+//     Price:12000,
+//   },
+//   {
+//     productId:3,
+//     productName: "iphone",
+//     Price:12000,
+//   }
+// ]
+
+// console.log("The number of Item in Cart is");
+// let res=cart.reduce((totalPrice,CurrentProduct)=>{
+//    return totalPrice+=CurrentProduct.Price;
+// },0)
+
+// console.log(res);
+
+//sorting an array using sort method()
+
+// const Ascendnum = [2, 7, 3, 12, 7, 3];
+// const Descendnum = [2, 7, 3, 12, 7, 3];
+
+// Ascendnum.sort((a, b) => {
+//   return a - b;
+// });
+// Descendnum.sort((a, b) => {
+//   return b - a;
+// });
+
+// console.log(Ascendnum);
+// console.log(Descendnum);
+
+//product sorting in ecommerce
+
+// const products = [
+//   {
+//     product: 1,
+//     productPrice: 1200,
+//   },
+//   {
+//     product: 1,
+//     productPrice: 200,
+//   },
+//   {
+//     product: 1,
+//     productPrice: 1300,
+//   },
+// ];
+// const productSorted = [...products];
+// // task is to sort the product according to the price
+// productSorted.sort((a, b) => {
+//   return a.productPrice - b.productPrice;
+// });
+// console.log(products);
+// console.log(productSorted);
